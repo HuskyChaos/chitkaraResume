@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>CV Maker</title>
+</head>
+<body id="index">
+
+    <fieldset>
+        <legend>CV Maker</legend>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="add1" placeholder="flat / house no." required>
+        <input type="text" id="add2" placeholder="locality" required>
+        <div class="divin">
+            <input type="text" id="city" placeholder="city" required>
+            <input type="text" id="state" placeholder="state" required>
+            <input type="text" id="pin" placeholder="pin code" required>
+        </div>
+        <input type="tel" id="contact" pattern="[0-9]{10}" placeholder="contact number" required>
+        <input type="email" id="email" placeholder="university email id" required>
+        <div class="divin">
+            <input type="text" id="li" placeholder="linkedin username" required>
+            <input type="text" id="git" placeholder="github account" required>
+        </div>
+        <button id="submit">Create Resume</button>
+    </fieldset>
+    
+</body>
+</html>
