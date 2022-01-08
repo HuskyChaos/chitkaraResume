@@ -1,8 +1,8 @@
 window.onload = () => {
 
-    var info = JSON.parse(window.localStorage.getItem('info'));
+    alert('Upload Picture For Resume');
 
-    console.log(info);
+    var info = JSON.parse(window.localStorage.getItem('info'));
 
     document.getElementsByClassName('name')[0].innerHTML = info.name;
     document.getElementsByClassName('name')[1].innerHTML = info.name;
@@ -13,23 +13,59 @@ window.onload = () => {
     document.getElementById('pin').innerHTML = info.pinCode;
     document.getElementById('phone').innerHTML = info.contact;
     document.getElementById('email').innerHTML = info.email;
-    document.getElementById('li').innerHTML = info.li;
-    document.getElementById('git').innerHTML = info.github;
+
+    document.getElementById('getpic').onchange = (event) => {
+        document.getElementById('pic').style = 'display: inline;';
+        document.getElementById('pic').src = URL.createObjectURL(event.target.files[0]);
+        document.getElementById('getpic').style = 'display: none;';
+    }
+
+
+    if ( info.li.length === 0 ) {} else if ( info.li === null) {} else if ( info.li === undefined) {}
+    else {
+        document.getElementById('li').innerHTML = 'LinkedIn: linkedin.com/in/' + info.li;
+    }
+
+    if ( info.github.length === 0 ) {} else if ( info.github === null) {} else if ( info.github === undefined) {}
+    else {
+        document.getElementById('git').innerHTML = 'GitHub: github.com/' + info.github;
+    }
+
     document.getElementById('q11').innerHTML = info.q1.q11;
     document.getElementById('q12').innerHTML = info.q1.q12;
     document.getElementById('q13').innerHTML = info.q1.q13;
     document.getElementById('q14').innerHTML = info.q1.q14;
-    document.getElementById('q15').innerHTML = info.q1.q15;
+
+    if ( parseInt(info.q1.q15) <= 10) {
+        document.getElementById('q15').innerHTML = info.q1.q15 + ' CGPA';
+    }
+    else {
+        document.getElementById('q15').innerHTML = info.q1.q15 + '%';
+    }
+
     document.getElementById('q21').innerHTML = info.q2.q21;
     document.getElementById('q22').innerHTML = info.q2.q22;
     document.getElementById('q23').innerHTML = info.q2.q23;
     document.getElementById('q24').innerHTML = info.q2.q24;
-    document.getElementById('q25').innerHTML = info.q2.q25;
+
+    if ( parseInt(info.q2.q25) <= 10 ) {
+        document.getElementById('q25').innerHTML = info.q2.q25 + ' CGPA';
+    }
+    else {
+        document.getElementById('q25').innerHTML = info.q2.q25 + '%';
+    }
+
     document.getElementById('q31').innerHTML = info.q3.q31;
     document.getElementById('q32').innerHTML = info.q3.q32;
     document.getElementById('q33').innerHTML = info.q3.q33;
     document.getElementById('q34').innerHTML = info.q3.q34;
-    document.getElementById('q35').innerHTML = info.q3.q35;
+
+    if ( parseInt(info.q3.q35) <= 10 ) {
+        document.getElementById('q35').innerHTML = info.q3.q35 + ' CGPA';
+    }
+    else {
+        document.getElementById('q35').innerHTML = info.q3.q35 + '%';
+    }
 
     document.getElementById('proj1name').innerHTML = info.p1.p1name;
     document.getElementById('proj1team').innerHTML = info.p1.p1team;
