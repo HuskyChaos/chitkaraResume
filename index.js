@@ -4,59 +4,8 @@ window.onload = () => {
 
     let info = JSON.parse(window.localStorage.getItem('info'));
 
-    if (info === null) {
-
-        info = { name: null, add1: null, add2: null, city: null,
-            state: null, pinCode: null, contact: null, email: null,
-            li: null, github: null, q1: {
-                q11: null,
-                q12: null,
-                q13: null,
-                q14: null,
-                q15: null
-            },
-            q2: {
-                q21: null,
-                q22: null,
-                q23: null,
-                q24: null,
-                q25: null
-            },
-            q3: {
-                q31: null,
-                q32: null,
-                q33: null,
-                q34: null,
-                q35: null
-            },
-            p1: {
-                p1name: null,
-                p1team: null,
-                p1info: null
-            },
-            p2: {
-                p2name: null,
-                p2team: null,
-                p2info: null
-            },
-            p3: {
-                p3name: null,
-                p3team: null,
-                p3info: null
-            },
-            p4: {
-                p4name: null,
-                p4team: null,
-                p4info: null
-            }
-        };
-
-        console.log(info);
-
-    }
-
-    else {
-
+    if (info !== null) {
+        
         document.getElementById('add1').value = info.add1;
         document.getElementById('add2').value = info.add2;
         document.getElementById('city').value = info.city;
@@ -81,7 +30,7 @@ window.onload = () => {
         document.getElementById('q33').value = info.q3.q33;
         document.getElementById('q34').value = info.q3.q34;
         document.getElementById('q35').value = info.q3.q35;
-
+    
         document.getElementById('proj1name').value = info.p1.p1name;
         document.getElementById('proj1team').value = info.p1.p1team;
         document.getElementById('proj1info').value = info.p1.p1info;
@@ -89,35 +38,37 @@ window.onload = () => {
         document.getElementById('proj2name').value = info.p2.p2name;
         document.getElementById('proj2team').value = info.p2.p2team;
         document.getElementById('proj2info').value = info.p2.p2info;
-
+    
         document.getElementById('proj3name').value = info.p3.p3name;
         document.getElementById('proj3team').value = info.p3.p3team;
         document.getElementById('proj3info').value = info.p3.p3info;
-
+    
         document.getElementById('proj4name').value = info.p4.p4name;
         document.getElementById('proj4team').value = info.p4.p4team;
         document.getElementById('proj4info').value = info.p4.p4info;
-
+    
         document.getElementById('state').value = info.state;
-
+    
         document.getElementById('plang').value = info.plang;
         document.getElementById('lang').value = info.lang;
         document.getElementById('frameworks').value = info.frameworks;
         document.getElementById('dbs').value = info.dbs;
         document.getElementById('tools').value = info.tools;
-
+    
         document.getElementById('cert1').value = info.cert1;
         document.getElementById('cert2').value = info.cert2;
         document.getElementById('cert3').value = info.cert3;
-
+        document.getElementById('cert4').value = info.cert4;
+    
         document.getElementById('ach1').value = info.ach1;
         document.getElementById('ach2').value = info.ach2;
         document.getElementById('ach3').value = info.ach3;
-
+        document.getElementById('ach4').value = info.ach4;
+    
         document.getElementById('hob1').value = info.hob1;
         document.getElementById('hob2').value = info.hob2;
         document.getElementById('hob3').value = info.hob3;
-
+        
     }
 
 
@@ -125,9 +76,6 @@ window.onload = () => {
     submit.onclick = () => {
 
         window.localStorage.removeItem("info");
-
-
-        // Temp
 
         info = { name: null, add1: null, add2: null, city: null,
             state: null, pinCode: null, contact: null, email: null,
@@ -173,21 +121,23 @@ window.onload = () => {
                 p4info: null
             },
             plang: null, lang: null, frameworks: null, dbs: null, tools: null,
-            cert1: null, cert2: null, cert3: null, ach1: null, ach2: null, ach3: null,
-            hob1: null, hob2: null, hob3: null
+            cert1: null, cert2: null, cert3: null, cert4: null, ach1: null, ach2: null, ach3: null,
+            ach4: null, hob1: null, hob2: null, hob3: null
         };
 
 
         info.ach1 = document.getElementById('ach1').value;
         info.ach2 = document.getElementById('ach2').value;
         info.ach3 = document.getElementById('ach3').value;
+        info.ach4 = document.getElementById('ach4').value;
 
         info.add1 = document.getElementById('add1').value;
         info.add2 = document.getElementById('add2').value;
 
         info.cert1 = document.getElementById('cert1').value;
         info.cert2 = document.getElementById('cert2').value;
-        info.cert3 = document.getElementById('cert2').value;
+        info.cert3 = document.getElementById('cert3').value;
+        info.cert4 = document.getElementById('cert4').value;
 
         info.city = document.getElementById('city').value;
         info.contact = document.getElementById('contact').value;

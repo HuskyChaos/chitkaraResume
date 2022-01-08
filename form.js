@@ -4,12 +4,11 @@ window.onload = () => {
 
     var info = JSON.parse(window.localStorage.getItem('info'));
 
-    document.getElementsByClassName('name')[0].innerHTML = info.name;
-    document.getElementsByClassName('name')[1].innerHTML = info.name;
+    document.getElementById('name').innerHTML = info.name;
     document.getElementById('add1').innerHTML = info.add1;
     document.getElementById('add2').innerHTML = info.add2;
-    document.getElementById('city').innerHTML = info.city;
-    document.getElementById('state').innerHTML = info.state;
+    document.getElementById('city').innerHTML = info.city.charAt(0).toUpperCase() + info.city.slice(1);
+    document.getElementById('state').innerHTML = info.state.charAt(0).toUpperCase() + info.state.slice(1);
     document.getElementById('pin').innerHTML = info.pinCode;
     document.getElementById('phone').innerHTML = info.contact;
     document.getElementById('email').innerHTML = info.email;
@@ -92,10 +91,12 @@ window.onload = () => {
     document.getElementById('cert1').innerHTML = info.cert1;
     document.getElementById('cert2').innerHTML = info.cert2;
     document.getElementById('cert3').innerHTML = info.cert3;
+    document.getElementById('cert4').innerHTML = info.cert4;
     
     document.getElementById('ach1').innerHTML = info.ach1;
     document.getElementById('ach2').innerHTML = info.ach2;
     document.getElementById('ach3').innerHTML = info.ach3;
+    document.getElementById('ach4').innerHTML = info.ach4;
     
     document.getElementById('hob1').innerHTML = info.hob1;
     document.getElementById('hob2').innerHTML = info.hob2;

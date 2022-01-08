@@ -21,7 +21,6 @@ input:focus {
 
 fieldset {
     width: 50vw;
-    /* height: 90vw; */
     border-radius: 2vw;
     display: flex;
     flex-direction: column;
