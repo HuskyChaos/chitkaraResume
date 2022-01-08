@@ -31,4 +31,38 @@ window.onload = () => {
     document.getElementById('q34').innerHTML = info.q3.q34;
     document.getElementById('q35').innerHTML = info.q3.q35;
 
+    document.getElementById('proj1name').innerHTML = info.p1.p1name;
+    document.getElementById('proj1team').innerHTML = info.p1.p1team;
+    document.getElementById('proj1info').innerHTML = info.p1.p1info;
+    
+    document.getElementById('proj2name').innerHTML = info.p2.p2name;
+    document.getElementById('proj2team').innerHTML = info.p2.p2team;
+    document.getElementById('proj2info').innerHTML = info.p2.p2info;
+
+    document.getElementById('proj3name').innerHTML = info.p3.p3name;
+    document.getElementById('proj3team').innerHTML = info.p3.p3team;
+    document.getElementById('proj3info').innerHTML = info.p3.p3info;
+
+    document.getElementById('proj4name').innerHTML = info.p4.p4name;
+    document.getElementById('proj4team').innerHTML = info.p4.p4team;
+    document.getElementById('proj4info').innerHTML = info.p4.p4info;
+
+    document.getElementById('plang').innerHTML = info.plang;
+    document.getElementById('lang').innerHTML = info.lang;
+    document.getElementById('frameworks').innerHTML = info.frameworks;
+    document.getElementById('dbs').innerHTML = info.dbs;
+    document.getElementById('tools').innerHTML = info.tools;
+    
+    document.getElementById('cert1').innerHTML = info.cert1;
+    document.getElementById('cert2').innerHTML = info.cert2;
+    document.getElementById('cert3').innerHTML = info.cert3;
+    
+    document.getElementById('ach1').innerHTML = info.ach1;
+    document.getElementById('ach2').innerHTML = info.ach2;
+    document.getElementById('ach3').innerHTML = info.ach3;
+    
+    document.getElementById('hob1').innerHTML = info.hob1;
+    document.getElementById('hob2').innerHTML = info.hob2;
+    document.getElementById('hob3').innerHTML = info.hob3;
+
 }

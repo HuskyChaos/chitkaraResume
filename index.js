@@ -29,7 +29,26 @@ window.onload = () => {
                 q34: null,
                 q35: null
             },
-            
+            p1: {
+                p1name: null,
+                p1team: null,
+                p1info: null
+            },
+            p2: {
+                p2name: null,
+                p2team: null,
+                p2info: null
+            },
+            p3: {
+                p3name: null,
+                p3team: null,
+                p3info: null
+            },
+            p4: {
+                p4name: null,
+                p4team: null,
+                p4info: null
+            }
         };
 
         console.log(info);
@@ -62,7 +81,42 @@ window.onload = () => {
         document.getElementById('q33').value = info.q3.q33;
         document.getElementById('q34').value = info.q3.q34;
         document.getElementById('q35').value = info.q3.q35;
+
+        document.getElementById('proj1name').value = info.p1.p1name;
+        document.getElementById('proj1team').value = info.p1.p1team;
+        document.getElementById('proj1info').value = info.p1.p1info;
+        
+        document.getElementById('proj2name').value = info.p2.p2name;
+        document.getElementById('proj2team').value = info.p2.p2team;
+        document.getElementById('proj2info').value = info.p2.p2info;
+
+        document.getElementById('proj3name').value = info.p3.p3name;
+        document.getElementById('proj3team').value = info.p3.p3team;
+        document.getElementById('proj3info').value = info.p3.p3info;
+
+        document.getElementById('proj4name').value = info.p4.p4name;
+        document.getElementById('proj4team').value = info.p4.p4team;
+        document.getElementById('proj4info').value = info.p4.p4info;
+
         document.getElementById('state').value = info.state;
+
+        document.getElementById('plang').value = info.plang;
+        document.getElementById('lang').value = info.lang;
+        document.getElementById('frameworks').value = info.frameworks;
+        document.getElementById('dbs').value = info.dbs;
+        document.getElementById('tools').value = info.tools;
+
+        document.getElementById('cert1').value = info.cert1;
+        document.getElementById('cert2').value = info.cert2;
+        document.getElementById('cert3').value = info.cert3;
+
+        document.getElementById('ach1').value = info.ach1;
+        document.getElementById('ach2').value = info.ach2;
+        document.getElementById('ach3').value = info.ach3;
+
+        document.getElementById('hob1').value = info.hob1;
+        document.getElementById('hob2').value = info.hob2;
+        document.getElementById('hob3').value = info.hob3;
 
     }
 
@@ -72,15 +126,107 @@ window.onload = () => {
 
         window.localStorage.removeItem("info");
 
+
+        // Temp
+
+        info = { name: null, add1: null, add2: null, city: null,
+            state: null, pinCode: null, contact: null, email: null,
+            li: null, github: null, q1: {
+                q11: null,
+                q12: null,
+                q13: null,
+                q14: null,
+                q15: null
+            },
+            q2: {
+                q21: null,
+                q22: null,
+                q23: null,
+                q24: null,
+                q25: null
+            },
+            q3: {
+                q31: null,
+                q32: null,
+                q33: null,
+                q34: null,
+                q35: null
+            },
+            p1: {
+                p1name: null,
+                p1team: null,
+                p1info: null
+            },
+            p2: {
+                p2name: null,
+                p2team: null,
+                p2info: null
+            },
+            p3: {
+                p3name: null,
+                p3team: null,
+                p3info: null
+            },
+            p4: {
+                p4name: null,
+                p4team: null,
+                p4info: null
+            },
+            plang: null, lang: null, frameworks: null, dbs: null, tools: null,
+            cert1: null, cert2: null, cert3: null, ach1: null, ach2: null, ach3: null,
+            hob1: null, hob2: null, hob3: null
+        };
+
+
+        info.ach1 = document.getElementById('ach1').value;
+        info.ach2 = document.getElementById('ach2').value;
+        info.ach3 = document.getElementById('ach3').value;
+
         info.add1 = document.getElementById('add1').value;
         info.add2 = document.getElementById('add2').value;
+
+        info.cert1 = document.getElementById('cert1').value;
+        info.cert2 = document.getElementById('cert2').value;
+        info.cert3 = document.getElementById('cert2').value;
+
         info.city = document.getElementById('city').value;
         info.contact = document.getElementById('contact').value;
+
+        info.dbs = document.getElementById('dbs').value;
+
         info.email = document.getElementById('email').value;
+
+        info.frameworks = document.getElementById('frameworks').value;
         info.github = document.getElementById('git').value;
+
+        info.hob1 = document.getElementById('hob1').value;
+        info.hob2 = document.getElementById('hob2').value;
+        info.hob3 = document.getElementById('hob3').value;
+
+        info.lang = document.getElementById('lang').value;
+        
         info.li = document.getElementById('li').value;
         info.name = document.getElementById('name').value;
         info.pinCode = document.getElementById('pin').value;
+
+        info.p1.p1name = document.getElementById('proj1name').value;
+        info.p1.p1team = document.getElementById('proj1team').value;
+        info.p1.p1info = document.getElementById('proj1info').value;
+
+        info.p2.p2name = document.getElementById('proj2name').value;
+        info.p2.p2team = document.getElementById('proj2team').value;
+        info.p2.p2info = document.getElementById('proj2info').value;
+
+        info.p3.p3name = document.getElementById('proj3name').value;
+        info.p3.p3team = document.getElementById('proj3team').value;
+        info.p3.p3info = document.getElementById('proj3info').value;
+
+        info.p4.p4name = document.getElementById('proj4name').value;
+        info.p4.p4team = document.getElementById('proj4team').value;
+        info.p4.p4info = document.getElementById('proj4info').value;
+
+        info.plang = document.getElementById('plang').value;
+
         info.q1.q11 = document.getElementById('q11').value;
         info.q1.q12 = document.getElementById('q12').value;
         info.q1.q13 = document.getElementById('q13').value;
@@ -97,6 +243,8 @@ window.onload = () => {
         info.q3.q34 = document.getElementById('q34').value;
         info.q3.q35 = document.getElementById('q35').value;
         info.state = document.getElementById('state').value;
+
+        info.tools = document.getElementById('tools').value;
         
         window.localStorage.setItem('info', JSON.stringify(info));
 
