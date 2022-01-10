@@ -68,3 +68,8 @@ textarea {
     font-size: 1.1vw;
     resize: none;
 }
+
+#cert, #achs, #hobbs {
+    display: flex;
+    flex-direction: column;
+}

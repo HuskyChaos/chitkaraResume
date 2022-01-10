@@ -67,30 +67,21 @@ window.onload = () => {
     }
 
     let num = info.numofproj;
-
     for (let i=1; i<=num; i++) {
-
         let div = document.createElement('div');
         div.className = 'project';
-
         let h3 = document.createElement('h3');
         h3.id = 'proj' + i + 'name';
-
         let h5 = document.createElement('h5');
-
         let span = document.createElement('span');
         span.id = 'proj' + i + 'team';
-
         let p = document.createElement('p');
         p.id = 'proj' + i + 'info';
-
         h5.appendChild(span);
         div.appendChild(h3);
         div.appendChild(h5);
         div.appendChild(p);
-
         document.getElementById('projects').appendChild(div);
-
         eval( "document.getElementById('proj" + i + "name').innerHTML = info.p" + i + ".p" + i + "name;" );
         eval( "document.getElementById('proj" + i + "team').innerHTML = info.p" + i + ".p" + i + "team;" );
         eval( "document.getElementById('proj" + i + "info').innerHTML = info.p" + i + ".p" + i + "info;" );
@@ -101,19 +92,29 @@ window.onload = () => {
     document.getElementById('frameworks').innerHTML = info.frameworks;
     document.getElementById('dbs').innerHTML = info.dbs;
     document.getElementById('tools').innerHTML = info.tools;
-    
-    document.getElementById('cert1').innerHTML = info.cert1;
-    document.getElementById('cert2').innerHTML = info.cert2;
-    document.getElementById('cert3').innerHTML = info.cert3;
-    document.getElementById('cert4').innerHTML = info.cert4;
-    
-    document.getElementById('ach1').innerHTML = info.ach1;
-    document.getElementById('ach2').innerHTML = info.ach2;
-    document.getElementById('ach3').innerHTML = info.ach3;
-    document.getElementById('ach4').innerHTML = info.ach4;
-    
-    document.getElementById('hob1').innerHTML = info.hob1;
-    document.getElementById('hob2').innerHTML = info.hob2;
-    document.getElementById('hob3').innerHTML = info.hob3;
+
+    let numc = info.numofc;
+    for (let i=1; i<=numc; i++) {
+        let li = document.createElement('li');
+        li.id = 'cert' + i;
+        document.getElementById('certs').appendChild(li);
+        eval("document.getElementById('cert" + i + "').innerHTML = info.cert" + i + ";");
+    }
+
+    let numa = info.numofa;
+    for (let i=1; i<=numa; i++) {
+        let li = document.createElement('li');
+        li.id = 'ach' + i;
+        document.getElementById('achs').appendChild(li);
+        eval("document.getElementById('ach" + i + "').innerHTML = info.ach" + i + ";");
+    }
+
+    let numh = info.numofh;
+    for (let i=1; i<=numh; i++) {
+        let li = document.createElement('li');
+        li.id = 'hob' + i;
+        document.getElementById('hobbs').appendChild(li);
+        eval("document.getElementById('hob" + i + "').innerHTML = info.hob" + i + ";");
+    }
 
 }
