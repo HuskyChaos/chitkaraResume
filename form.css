@@ -79,6 +79,10 @@ body {
     padding-top: 0.5%;
 }
 
+.section2 table {
+    width: 100%;
+}
+
 .section2 table, .section2 tr, .section2 td, .section2 th {
     border: solid 1px black;
     border-collapse: collapse;
