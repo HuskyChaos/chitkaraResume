@@ -66,21 +66,35 @@ window.onload = () => {
         document.getElementById('q35').innerHTML = info.q3.q35 + '%';
     }
 
-    document.getElementById('proj1name').innerHTML = info.p1.p1name;
-    document.getElementById('proj1team').innerHTML = info.p1.p1team;
-    document.getElementById('proj1info').innerHTML = info.p1.p1info;
-    
-    document.getElementById('proj2name').innerHTML = info.p2.p2name;
-    document.getElementById('proj2team').innerHTML = info.p2.p2team;
-    document.getElementById('proj2info').innerHTML = info.p2.p2info;
+    let num = info.numofproj;
 
-    document.getElementById('proj3name').innerHTML = info.p3.p3name;
-    document.getElementById('proj3team').innerHTML = info.p3.p3team;
-    document.getElementById('proj3info').innerHTML = info.p3.p3info;
+    for (let i=1; i<=num; i++) {
 
-    document.getElementById('proj4name').innerHTML = info.p4.p4name;
-    document.getElementById('proj4team').innerHTML = info.p4.p4team;
-    document.getElementById('proj4info').innerHTML = info.p4.p4info;
+        let div = document.createElement('div');
+        div.className = 'project';
+
+        let h3 = document.createElement('h3');
+        h3.id = 'proj' + i + 'name';
+
+        let h5 = document.createElement('h5');
+
+        let span = document.createElement('span');
+        span.id = 'proj' + i + 'team';
+
+        let p = document.createElement('p');
+        p.id = 'proj' + i + 'info';
+
+        h5.appendChild(span);
+        div.appendChild(h3);
+        div.appendChild(h5);
+        div.appendChild(p);
+
+        document.getElementById('projects').appendChild(div);
+
+        eval( "document.getElementById('proj" + i + "name').innerHTML = info.p" + i + ".p" + i + "name;" );
+        eval( "document.getElementById('proj" + i + "team').innerHTML = info.p" + i + ".p" + i + "team;" );
+        eval( "document.getElementById('proj" + i + "info').innerHTML = info.p" + i + ".p" + i + "info;" );
+    }
 
     document.getElementById('plang').innerHTML = info.plang;
     document.getElementById('lang').innerHTML = info.lang;

@@ -2,6 +2,8 @@ window.onload = () => {
 
     let submit = document.getElementById('submit');
 
+    let num = null;
+
     let info = JSON.parse(window.localStorage.getItem('info'));
 
     if (info !== null) {
@@ -31,21 +33,21 @@ window.onload = () => {
         document.getElementById('q34').value = info.q3.q34;
         document.getElementById('q35').value = info.q3.q35;
     
-        document.getElementById('proj1name').value = info.p1.p1name;
-        document.getElementById('proj1team').value = info.p1.p1team;
-        document.getElementById('proj1info').value = info.p1.p1info;
+        // document.getElementById('proj1name').value = info.p1.p1name;
+        // document.getElementById('proj1team').value = info.p1.p1team;
+        // document.getElementById('proj1info').value = info.p1.p1info;
         
-        document.getElementById('proj2name').value = info.p2.p2name;
-        document.getElementById('proj2team').value = info.p2.p2team;
-        document.getElementById('proj2info').value = info.p2.p2info;
+        // document.getElementById('proj2name').value = info.p2.p2name;
+        // document.getElementById('proj2team').value = info.p2.p2team;
+        // document.getElementById('proj2info').value = info.p2.p2info;
     
-        document.getElementById('proj3name').value = info.p3.p3name;
-        document.getElementById('proj3team').value = info.p3.p3team;
-        document.getElementById('proj3info').value = info.p3.p3info;
+        // document.getElementById('proj3name').value = info.p3.p3name;
+        // document.getElementById('proj3team').value = info.p3.p3team;
+        // document.getElementById('proj3info').value = info.p3.p3info;
     
-        document.getElementById('proj4name').value = info.p4.p4name;
-        document.getElementById('proj4team').value = info.p4.p4team;
-        document.getElementById('proj4info').value = info.p4.p4info;
+        // document.getElementById('proj4name').value = info.p4.p4name;
+        // document.getElementById('proj4team').value = info.p4.p4team;
+        // document.getElementById('proj4info').value = info.p4.p4info;
     
         document.getElementById('state').value = info.state;
     
@@ -69,6 +71,52 @@ window.onload = () => {
         document.getElementById('hob2').value = info.hob2;
         document.getElementById('hob3').value = info.hob3;
         
+    }
+
+
+    document.getElementById('projnum').onchange = (e) => {
+        num = parseInt(e.target.value);
+
+        if (num < 2 || num > 4) {
+            alert('Min 2 Projects.\nMax 4 Projects');
+        }
+
+        else if ( isNaN(num) ) {
+            alert('Enter a value!');
+        }
+
+        else {
+
+            for (let i=1; i<=num; i++ ) {
+    
+                let div = document.createElement('div');
+                div.className = 'proj';
+    
+                let inp1 = document.createElement('input');
+                inp1.type = 'text';
+                inp1.id = 'proj'+i+'name';
+                inp1.placeholder = 'Project Name';
+    
+                let inp2 = document.createElement('input');
+                inp2.type = 'text';
+                inp2.id = 'proj'+i+'team';
+                inp2.placeholder = 'Team of';
+    
+                let inp3 = document.createElement('textarea');
+                inp3.cols = 30;
+                inp3.rows = 6;
+                inp3.id = 'proj'+i+'info';
+                inp3.placeholder = 'About the project';
+    
+                div.appendChild(inp1);
+                div.appendChild(inp2);
+                div.appendChild(inp3);
+    
+                document.getElementById('projin').appendChild(div);
+            }
+            e.target.style.display = 'none';
+        }
+
     }
 
 
@@ -122,7 +170,7 @@ window.onload = () => {
             },
             plang: null, lang: null, frameworks: null, dbs: null, tools: null,
             cert1: null, cert2: null, cert3: null, cert4: null, ach1: null, ach2: null, ach3: null,
-            ach4: null, hob1: null, hob2: null, hob3: null
+            ach4: null, hob1: null, hob2: null, hob3: null, numofproj: null
         };
 
 
@@ -157,23 +205,18 @@ window.onload = () => {
         
         info.li = document.getElementById('li').value;
         info.name = document.getElementById('name').value;
+
+        info.numofproj = num;
+
         info.pinCode = document.getElementById('pin').value;
 
-        info.p1.p1name = document.getElementById('proj1name').value;
-        info.p1.p1team = document.getElementById('proj1team').value;
-        info.p1.p1info = document.getElementById('proj1info').value;
-
-        info.p2.p2name = document.getElementById('proj2name').value;
-        info.p2.p2team = document.getElementById('proj2team').value;
-        info.p2.p2info = document.getElementById('proj2info').value;
-
-        info.p3.p3name = document.getElementById('proj3name').value;
-        info.p3.p3team = document.getElementById('proj3team').value;
-        info.p3.p3info = document.getElementById('proj3info').value;
-
-        info.p4.p4name = document.getElementById('proj4name').value;
-        info.p4.p4team = document.getElementById('proj4team').value;
-        info.p4.p4info = document.getElementById('proj4info').value;
+        for (i=1; i<=num; i++) {
+            
+            eval('info.p' + i + '.p' + i + 'name = document.getElementById("proj' + i + 'name").value;');
+            eval('info.p' + i + '.p' + i + 'team = document.getElementById("proj' + i + 'team").value;');
+            eval('info.p' + i + '.p' + i + 'info = document.getElementById("proj' + i + 'info").value;');
+            
+        }
 
         info.plang = document.getElementById('plang').value;
 
