@@ -5,12 +5,12 @@ window.onload = () => {
     var info = JSON.parse(window.localStorage.getItem('info'));
 
     document.getElementById('name').innerHTML = info.name;
-    document.getElementById('add1').innerHTML = info.add1;
-    document.getElementById('add2').innerHTML = info.add2;
+    document.getElementById('addLine1').innerHTML = info.addLine1;
+    document.getElementById('addLine2').innerHTML = info.addLine2;
     document.getElementById('city').innerHTML = info.city.charAt(0).toUpperCase() + info.city.slice(1);
     document.getElementById('state').innerHTML = info.state.charAt(0).toUpperCase() + info.state.slice(1);
-    document.getElementById('pin').innerHTML = info.pinCode;
-    document.getElementById('phone').innerHTML = info.contact;
+    document.getElementById('pinCode').innerHTML = info.pinCode;
+    document.getElementById('contact').innerHTML = info.contact;
     document.getElementById('email').innerHTML = info.email;
 
     document.getElementById('getpic').onchange = (event) => {
@@ -20,51 +20,41 @@ window.onload = () => {
     }
 
 
-    if ( info.li.length === 0 ) {} else if ( info.li === null) {} else if ( info.li === undefined) {}
+    if ( info.linkedIn.length === 0 ) {} else if ( info.linkedIn === null) {} else if ( info.linkedIn === undefined) {}
     else {
-        document.getElementById('li').innerHTML = 'LinkedIn: linkedin.com/in/' + info.li;
+        document.getElementById('linkedIn').innerHTML = 'LinkedIn: linkedin.com/in/' + info.linkedIn;
     }
 
-    if ( info.github.length === 0 ) {} else if ( info.github === null) {} else if ( info.github === undefined) {}
+    if ( info.gitHub.length === 0 ) {} else if ( info.gitHub === null) {} else if ( info.gitHub === undefined) {}
     else {
-        document.getElementById('git').innerHTML = 'GitHub: github.com/' + info.github;
+        document.getElementById('gitHub').innerHTML = 'GitHub: github.com/' + info.gitHub;
     }
 
-    document.getElementById('q11').innerHTML = info.q1.q11;
-    document.getElementById('q12').innerHTML = info.q1.q12;
-    document.getElementById('q13').innerHTML = info.q1.q13;
-    document.getElementById('q14').innerHTML = info.q1.q14;
+    document.getElementById('q11').innerHTML = info.q11;
+    document.getElementById('q12').innerHTML = info.q12;
+    document.getElementById('q13').innerHTML = info.q13;
+    document.getElementById('q14').innerHTML = info.q14;
 
-    if ( parseInt(info.q1.q15) <= 10) {
-        document.getElementById('q15').innerHTML = info.q1.q15 + ' CGPA';
-    }
+    if ( parseInt(info.q15) <= 10) {document.getElementById('q15').innerHTML = info.q15 + ' CGPA';}
     else {
-        document.getElementById('q15').innerHTML = info.q1.q15 + '%';
+        document.getElementById('q15').innerHTML = info.q15 + '%';
     }
 
-    document.getElementById('q21').innerHTML = info.q2.q21;
-    document.getElementById('q22').innerHTML = info.q2.q22;
-    document.getElementById('q23').innerHTML = info.q2.q23;
-    document.getElementById('q24').innerHTML = info.q2.q24;
+    document.getElementById('q21').innerHTML = info.q21;
+    document.getElementById('q22').innerHTML = info.q22;
+    document.getElementById('q23').innerHTML = info.q23;
+    document.getElementById('q24').innerHTML = info.q24;
 
-    if ( parseInt(info.q2.q25) <= 10 ) {
-        document.getElementById('q25').innerHTML = info.q2.q25 + ' CGPA';
-    }
-    else {
-        document.getElementById('q25').innerHTML = info.q2.q25 + '%';
-    }
+    if ( parseInt(info.q25) <= 10 ) {document.getElementById('q25').innerHTML = info.q25 + ' CGPA';}
+    else {document.getElementById('q25').innerHTML = info.q25 + '%';}
 
-    document.getElementById('q31').innerHTML = info.q3.q31;
-    document.getElementById('q32').innerHTML = info.q3.q32;
-    document.getElementById('q33').innerHTML = info.q3.q33;
-    document.getElementById('q34').innerHTML = info.q3.q34;
+    document.getElementById('q31').innerHTML = info.q31;
+    document.getElementById('q32').innerHTML = info.q32;
+    document.getElementById('q33').innerHTML = info.q33;
+    document.getElementById('q34').innerHTML = info.q34;
 
-    if ( parseInt(info.q3.q35) <= 10 ) {
-        document.getElementById('q35').innerHTML = info.q3.q35 + ' CGPA';
-    }
-    else {
-        document.getElementById('q35').innerHTML = info.q3.q35 + '%';
-    }
+    if ( parseInt(info.q35) <= 10 ) {document.getElementById('q35').innerHTML = info.q35 + ' CGPA';}
+    else {document.getElementById('q35').innerHTML = info.q35 + '%';}
 
     let num = info.numofproj;
     for (let i=1; i<=num; i++) {
@@ -87,13 +77,13 @@ window.onload = () => {
         eval( "document.getElementById('proj" + i + "info').innerHTML = info.p" + i + ".p" + i + "info;" );
     }
 
-    document.getElementById('plang').innerHTML = info.plang;
+    document.getElementById('progLang').innerHTML = info.progLang;
     document.getElementById('lang').innerHTML = info.lang;
     document.getElementById('frameworks').innerHTML = info.frameworks;
     document.getElementById('dbs').innerHTML = info.dbs;
     document.getElementById('tools').innerHTML = info.tools;
 
-    let numc = info.numofc;
+    let numc = info.numofcert;
     for (let i=1; i<=numc; i++) {
         let li = document.createElement('li');
         li.id = 'cert' + i;
@@ -101,7 +91,7 @@ window.onload = () => {
         eval("document.getElementById('cert" + i + "').innerHTML = info.cert" + i + ";");
     }
 
-    let numa = info.numofa;
+    let numa = info.numofach;
     for (let i=1; i<=numa; i++) {
         let li = document.createElement('li');
         li.id = 'ach' + i;
@@ -109,7 +99,7 @@ window.onload = () => {
         eval("document.getElementById('ach" + i + "').innerHTML = info.ach" + i + ";");
     }
 
-    let numh = info.numofh;
+    let numh = info.numofhobb;
     for (let i=1; i<=numh; i++) {
         let li = document.createElement('li');
         li.id = 'hob' + i;
