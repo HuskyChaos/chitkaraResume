@@ -1,6 +1,7 @@
 window.onload = () => {
 
     let submit = document.getElementById('submit');
+    let reset = document.getElementById('reset');
 
     let nump = null;
     let numc = null;
@@ -50,85 +51,82 @@ window.onload = () => {
 
     }
 
-    else {
+    document.getElementById('projnum').onchange = (e) => {
+        nump = parseInt(e.target.value);
+        if ( nump > 1 && nump < 5 ) {
+            e.target.style.display = 'none';
+            for (let i=1; i<=nump; i++ ) {
+                let div = document.createElement('div');
+                div.className = 'proj';
+                let inp1 = document.createElement('input');
+                inp1.type = 'text';
+                inp1.id = 'proj'+i+'name';
+                inp1.placeholder = 'Project Name';
+                let inp2 = document.createElement('input');
+                inp2.type = 'text';
+                inp2.id = 'proj'+i+'team';
+                inp2.placeholder = 'Team of';
+                let inp3 = document.createElement('textarea');
+                inp3.cols = 30;
+                inp3.rows = 6;
+                inp3.id = 'proj'+i+'info';
+                inp3.placeholder = 'About the project';
+                div.appendChild(inp1);
+                div.appendChild(inp2);
+                div.appendChild(inp3);
+                document.getElementById('projin').appendChild(div);
+            }
+        }
+        else if (isNaN(nump)) {alert('Enter a value!');}
+        else {alert('Min 2 Projects.\nMax 4 Projects');}
+    }
 
-        document.getElementById('projnum').onchange = (e) => {
-            nump = parseInt(e.target.value);
-            if ( nump > 1 && nump < 5 ) {
-                e.target.style.display = 'none';
-                for (let i=1; i<=nump; i++ ) {
-                    let div = document.createElement('div');
-                    div.className = 'proj';
-                    let inp1 = document.createElement('input');
-                    inp1.type = 'text';
-                    inp1.id = 'proj'+i+'name';
-                    inp1.placeholder = 'Project Name';
-                    let inp2 = document.createElement('input');
-                    inp2.type = 'text';
-                    inp2.id = 'proj'+i+'team';
-                    inp2.placeholder = 'Team of';
-                    let inp3 = document.createElement('textarea');
-                    inp3.cols = 30;
-                    inp3.rows = 6;
-                    inp3.id = 'proj'+i+'info';
-                    inp3.placeholder = 'About the project';
-                    div.appendChild(inp1);
-                    div.appendChild(inp2);
-                    div.appendChild(inp3);
-                    document.getElementById('projin').appendChild(div);
-                }
+    document.getElementById('certs').onchange = (e) => {
+        numc = parseInt(e.target.value);
+        if (numc > 0 && numc < 5) {
+            e.target.style.display = 'none';
+            for (let i=1; i<=numc; i++) {
+                let inp = document.createElement('input');
+                inp.type = 'text';
+                inp.id = 'cert' + i;
+                inp.placeholder = 'Certificate ' + i;
+                document.getElementById('cert').appendChild(inp);
             }
-            else if (isNaN(nump)) {alert('Enter a value!');}
-            else {alert('Min 2 Projects.\nMax 4 Projects');}
         }
-    
-        document.getElementById('certs').onchange = (e) => {
-            numc = parseInt(e.target.value);
-            if (numc > 0 && numc < 5) {
-                e.target.style.display = 'none';
-                for (let i=1; i<=numc; i++) {
-                    let inp = document.createElement('input');
-                    inp.type = 'text';
-                    inp.id = 'cert' + i;
-                    inp.placeholder = 'Certificate ' + i;
-                    document.getElementById('cert').appendChild(inp);
-                }
+        else if ( isNaN(numc) ) {alert('Enter a value!');}
+        else {alert('Min 0\nMax 4');}
+    }
+
+    document.getElementById('ach').onchange = (e) => {
+        numa = parseInt(e.target.value);
+        if (numa > 0 && numa < 5) {
+            e.target.style.display = 'none';
+            for (let i=1; i<=numa; i++) {
+                let inp = document.createElement('input');
+                inp.type = 'text';
+                inp.id = 'ach' + i;
+                inp.placeholder = 'Achievement ' + i;
+                document.getElementById('achs').appendChild(inp);
             }
-            else if ( isNaN(numc) ) {alert('Enter a value!');}
-            else {alert('Min 0\nMax 4');}
         }
-    
-        document.getElementById('ach').onchange = (e) => {
-            numa = parseInt(e.target.value);
-            if (numa > 0 && numa < 5) {
-                e.target.style.display = 'none';
-                for (let i=1; i<=numa; i++) {
-                    let inp = document.createElement('input');
-                    inp.type = 'text';
-                    inp.id = 'ach' + i;
-                    inp.placeholder = 'Achievement ' + i;
-                    document.getElementById('achs').appendChild(inp);
-                }
+        else if (isNaN(numa)) {alert('Enter a value!');}
+        else {alert('Min 0\nMax 4');}
+    }
+
+    document.getElementById('hobb').onchange = (e) => {
+        numh = parseInt(e.target.value);
+        if (numh > 0 && numh < 4) {
+            e.target.style.display = 'none';
+            for (let i=1; i<=numh; i++) {
+                let inp = document.createElement('input');
+                inp.type = 'text';
+                inp.id = 'hob' + i;
+                inp.placeholder = 'Hobbie ' + i;
+                document.getElementById('hobbs').appendChild(inp);
             }
-            else if (isNaN(numa)) {alert('Enter a value!');}
-            else {alert('Min 0\nMax 4');}
         }
-    
-        document.getElementById('hobb').onchange = (e) => {
-            numh = parseInt(e.target.value);
-            if (numh > 0 && numh < 4) {
-                e.target.style.display = 'none';
-                for (let i=1; i<=numh; i++) {
-                    let inp = document.createElement('input');
-                    inp.type = 'text';
-                    inp.id = 'hob' + i;
-                    inp.placeholder = 'Hobbie ' + i;
-                    document.getElementById('hobbs').appendChild(inp);
-                }
-            }
-            else if (isNaN(numa)) {alert('Enter a value!');}
-            else {alert('Min 0\nMax 3');}
-        }
+        else if (isNaN(numa)) {alert('Enter a value!');}
+        else {alert('Min 0\nMax 3');}
     }
 
 
@@ -240,5 +238,10 @@ window.onload = () => {
         
         window.localStorage.setItem('info', JSON.stringify(info));
 
+    }
+
+    reset.onclick = () => {
+        window.localStorage.removeItem("info");
+        window.location.replace('./index.html');
     }
 }

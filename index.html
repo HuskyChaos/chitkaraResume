@@ -12,16 +12,16 @@
 
     <fieldset>
         <legend>CV Maker</legend>
-        <input type="text" id="name" placeholder="Name" required>
-        <input type="text" id="addLine1" placeholder="flat / house no." required>
-        <input type="text" id="addLine2" placeholder="locality" required>
+        <input type="text" id="name" placeholder="Name" class="input">
+        <input type="text" id="addLine1" placeholder="flat / house no." class="input">
+        <input type="text" id="addLine2" placeholder="locality" class="input">
         <div class="divin">
-            <input type="text" id="city" placeholder="city" required>
-            <input type="text" id="state" placeholder="state" required>
-            <input type="text" id="pinCode" placeholder="pin code" required>
+            <input type="text" id="city" placeholder="city">
+            <input type="text" id="state" placeholder="state">
+            <input type="text" id="pinCode" placeholder="pin code">
         </div>
-        <input type="tel" id="contact" pattern="[0-9]{10}" placeholder="contact number" required>
-        <input type="email" id="email" placeholder="university email id" required>
+        <input type="tel" id="contact" pattern="[0-9]{10}" placeholder="contact number">
+        <input type="email" id="email" placeholder="university email id">
         <div class="divin">
             <input type="text" id="linkedIn" placeholder="linkedin username">
             <input type="text" id="gitHub" placeholder="github account">
@@ -83,8 +83,10 @@
             
         </div>
 
-        <!-- <button id="submit">Create Resume</button> -->
-        <a href="./form.html" id="submit">Create Resume</a>
+        <div class="buttons">
+            <a href="./form.html" id="submit">Create Resume</a>
+            <button id="reset">Reset</button>
+        </div>
     </fieldset>
     
 </body>
