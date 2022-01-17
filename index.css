@@ -73,3 +73,7 @@ textarea {
     display: flex;
     flex-direction: column;
 }
+
+#submit {
+    text-decoration: none;
+}

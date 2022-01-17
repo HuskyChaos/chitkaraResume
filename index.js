@@ -199,7 +199,5 @@ window.onload = () => {
         
         window.localStorage.setItem('info', JSON.stringify(info));
 
-        // window.location.replace('form.html');
-
     }
 }
