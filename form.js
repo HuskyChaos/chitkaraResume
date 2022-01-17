@@ -2,10 +2,6 @@ window.onload = () => {
 
     alert('Upload Picture For Resume');
 
-    window.onbeforeunload = () => {
-        alert('123');
-    }
-
     var info = JSON.parse(window.localStorage.getItem('info'));
 
     document.getElementById('name').innerHTML = info.name;
