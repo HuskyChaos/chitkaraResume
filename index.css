@@ -74,6 +74,18 @@ textarea {
     flex-direction: column;
 }
 
+p {
+    padding: 1%;
+}
+
+#rcert, #rach, #rhobb {
+    display: none;
+    border: solid 1px black;
+    font-size: 1.2vw;
+    border-radius: 10vw;
+    padding: 0.5%;
+}
+
 .buttons {
     width: 100%;
     display: flex;
@@ -97,4 +109,5 @@ textarea {
     border-radius: 10vw;
     padding: 1% 2%;
     align-self: center;
+    background: white;
 }

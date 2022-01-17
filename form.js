@@ -2,7 +2,10 @@ window.onload = () => {
 
     alert('Upload Picture For Resume');
 
+    
     var info = JSON.parse(window.localStorage.getItem('info'));
+    
+    console.log(info);
 
     document.getElementById('name').innerHTML = info.name;
     document.getElementById('addLine1').innerHTML = info.addLine1;

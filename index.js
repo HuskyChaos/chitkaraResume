@@ -2,6 +2,9 @@ window.onload = () => {
 
     let submit = document.getElementById('submit');
     let reset = document.getElementById('reset');
+    let rcert = document.getElementById('rcert');
+    let rach = document.getElementById('rach');
+    let rhobb = document.getElementById('rhobb');
 
     let nump = null;
     let numc = null;
@@ -15,6 +18,7 @@ window.onload = () => {
         numc = info.numofcert
         numa = info.numofach
         numh = info.numofhobb
+        nump = info.numofproj
 
         for (let i=1; i <= numc; i++) {
             document.getElementById('certs').style.display = 'none';
@@ -48,6 +52,10 @@ window.onload = () => {
                 eval("document.getElementById('" + i + "').value = info." + i + ";");
             }
         }
+
+        if (info.numofcert !== null) { rcert.style.display = 'inline'; }
+        if (info.numofach !== null) { rach.style.display = 'inline'; }
+        if (info.numofhobb !== null) { rhobb.style.display = 'inline'; }
 
     }
 
@@ -84,6 +92,7 @@ window.onload = () => {
     document.getElementById('certs').onchange = (e) => {
         numc = parseInt(e.target.value);
         if (numc > 0 && numc < 5) {
+            rcert.style.display = 'inline';
             e.target.style.display = 'none';
             for (let i=1; i<=numc; i++) {
                 let inp = document.createElement('input');
@@ -100,6 +109,7 @@ window.onload = () => {
     document.getElementById('ach').onchange = (e) => {
         numa = parseInt(e.target.value);
         if (numa > 0 && numa < 5) {
+            rach.style.display = 'inline';
             e.target.style.display = 'none';
             for (let i=1; i<=numa; i++) {
                 let inp = document.createElement('input');
@@ -116,6 +126,7 @@ window.onload = () => {
     document.getElementById('hobb').onchange = (e) => {
         numh = parseInt(e.target.value);
         if (numh > 0 && numh < 4) {
+            rhobb.style.display = 'inline';
             e.target.style.display = 'none';
             for (let i=1; i<=numh; i++) {
                 let inp = document.createElement('input');
@@ -131,9 +142,26 @@ window.onload = () => {
 
 
 
+    rcert.onclick = (e) => {
+        e.target.style.display = 'none';
+        numc = null;
+        document.getElementById('certs').style.display = 'inline';
+        document.getElementById('cert').innerHTML = '';
+    }
 
+    rach.onclick = (e) => {
+        e.target.style.display = 'none';
+        numa = null;
+        document.getElementById('ach').style.display = 'inline';
+        document.getElementById('achs').innerHTML = '';
+    }
 
-    
+    rhobb.onclick = (e) => {
+        e.target.style.display = 'none';
+        numh = null;
+        document.getElementById('hobb').style.display = 'inline';
+        document.getElementById('hobbs').innerHTML = '';
+    }
 
 
     submit.onclick = () => {
@@ -233,15 +261,15 @@ window.onload = () => {
         info.q34 = document.getElementById('q34').value;
         info.q35 = document.getElementById('q35').value;
         info.state = document.getElementById('state').value;
-
         info.tools = document.getElementById('tools').value;
         
         window.localStorage.setItem('info', JSON.stringify(info));
-
+        document.location.assign('./form.html');
     }
 
     reset.onclick = () => {
         window.localStorage.removeItem("info");
         window.location.replace('./index.html');
     }
+
 }
