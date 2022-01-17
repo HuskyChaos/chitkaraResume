@@ -1,9 +1,9 @@
 window.onload = () => {
 
-    alert('Upload Picture For Resume\nAnd reload page to go back to the form');
+    alert('Upload Picture For Resume');
 
     window.onbeforeunload = () => {
-        window.location.replace('index.html');
+        alert('123');
     }
 
     var info = JSON.parse(window.localStorage.getItem('info'));
