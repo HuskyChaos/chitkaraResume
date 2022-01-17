@@ -2,9 +2,11 @@ window.onload = () => {
 
     let submit = document.getElementById('submit');
     let reset = document.getElementById('reset');
+    let rproj = document.getElementById('rproj');
     let rcert = document.getElementById('rcert');
     let rach = document.getElementById('rach');
     let rhobb = document.getElementById('rhobb');
+
 
     let nump = null;
     let numc = null;
@@ -19,8 +21,33 @@ window.onload = () => {
         numa = info.numofach
         numh = info.numofhobb
         nump = info.numofproj
+        
+        for (let i=1; i<=nump; i++) {
+            document.getElementById('projwarn').style.display = 'none';
+            document.getElementById('projnum').style.display = 'none';
+            let div = document.createElement('div');
+            div.className = 'proj';
+            let inp1 = document.createElement('input');
+            inp1.type = 'text';
+            inp1.id = 'proj'+i+'name';
+            inp1.placeholder = 'Project Name';
+            let inp2 = document.createElement('input');
+            inp2.type = 'text';
+            inp2.id = 'proj'+i+'team';
+            inp2.placeholder = 'Team of';
+            let inp3 = document.createElement('textarea');
+            inp3.cols = 30;
+            inp3.rows = 6;
+            inp3.id = 'proj'+i+'info';
+            inp3.placeholder = 'About the project';
+            div.appendChild(inp1);
+            div.appendChild(inp2);
+            div.appendChild(inp3);
+            document.getElementById('projin').appendChild(div);
+        }
 
         for (let i=1; i <= numc; i++) {
+            document.getElementById('certwarn').style.display = 'none';
             document.getElementById('certs').style.display = 'none';
             let inp = document.createElement('input');
             inp.type = 'text';
@@ -30,6 +57,7 @@ window.onload = () => {
         }
 
         for (let i=1; i <= numa; i++) {
+            document.getElementById('achwarn').style.display = 'none';
             document.getElementById('ach').style.display = 'none';
             let inp = document.createElement('input');
             inp.type = 'text';
@@ -39,6 +67,7 @@ window.onload = () => {
         }
 
         for (let i=1; i <= numh; i++) {
+            document.getElementById('hobbwarn').style.display = 'none';
             document.getElementById('hobb').style.display = 'none';
             let inp = document.createElement('input');
             inp.type = 'text';
@@ -52,7 +81,13 @@ window.onload = () => {
                 eval("document.getElementById('" + i + "').value = info." + i + ";");
             }
         }
+        for (let i=1; i<=nump; i++) {
+            eval( "document.getElementById('proj" + i + "name').value = info.p" + i + ".p" + i + "name;" );
+            eval( "document.getElementById('proj" + i + "team').value = info.p" + i + ".p" + i + "team;" );
+            eval( "document.getElementById('proj" + i + "info').value = info.p" + i + ".p" + i + "info;" );
+        }
 
+        if (info.numofproj !== null) { rproj.style.display = 'inline'; }
         if (info.numofcert !== null) { rcert.style.display = 'inline'; }
         if (info.numofach !== null) { rach.style.display = 'inline'; }
         if (info.numofhobb !== null) { rhobb.style.display = 'inline'; }
@@ -62,6 +97,8 @@ window.onload = () => {
     document.getElementById('projnum').onchange = (e) => {
         nump = parseInt(e.target.value);
         if ( nump > 1 && nump < 5 ) {
+            rproj.style.display = 'inline';
+            document.getElementById('projwarn').style.display = 'none';
             e.target.style.display = 'none';
             for (let i=1; i<=nump; i++ ) {
                 let div = document.createElement('div');
@@ -93,6 +130,7 @@ window.onload = () => {
         numc = parseInt(e.target.value);
         if (numc > 0 && numc < 5) {
             rcert.style.display = 'inline';
+            document.getElementById('certwarn').style.display = 'none';
             e.target.style.display = 'none';
             for (let i=1; i<=numc; i++) {
                 let inp = document.createElement('input');
@@ -110,6 +148,7 @@ window.onload = () => {
         numa = parseInt(e.target.value);
         if (numa > 0 && numa < 5) {
             rach.style.display = 'inline';
+            document.getElementById('achwarn').style.display = 'none';
             e.target.style.display = 'none';
             for (let i=1; i<=numa; i++) {
                 let inp = document.createElement('input');
@@ -127,6 +166,7 @@ window.onload = () => {
         numh = parseInt(e.target.value);
         if (numh > 0 && numh < 4) {
             rhobb.style.display = 'inline';
+            document.getElementById('hobbwarn').style.display = 'none';
             e.target.style.display = 'none';
             for (let i=1; i<=numh; i++) {
                 let inp = document.createElement('input');
@@ -140,10 +180,18 @@ window.onload = () => {
         else {alert('Min 0\nMax 3');}
     }
 
+    rproj.onclick = (e) => {
+        e.target.style.display = 'none';
+        document.getElementById('projwarn').style.display = 'inline';
+        nump = null;
+        document.getElementById('projnum').style.display = 'inline';
+        document.getElementById('projin').innerHTML = '';
+    }
 
 
     rcert.onclick = (e) => {
         e.target.style.display = 'none';
+        document.getElementById('certwarn').style.display = 'inline';
         numc = null;
         document.getElementById('certs').style.display = 'inline';
         document.getElementById('cert').innerHTML = '';
@@ -151,6 +199,7 @@ window.onload = () => {
 
     rach.onclick = (e) => {
         e.target.style.display = 'none';
+        document.getElementById('achwarn').style.display = 'inline';
         numa = null;
         document.getElementById('ach').style.display = 'inline';
         document.getElementById('achs').innerHTML = '';
@@ -158,6 +207,7 @@ window.onload = () => {
 
     rhobb.onclick = (e) => {
         e.target.style.display = 'none';
+        document.getElementById('hobbwarn').style.display = 'inline';
         numh = null;
         document.getElementById('hobb').style.display = 'inline';
         document.getElementById('hobbs').innerHTML = '';
