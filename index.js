@@ -21,6 +21,7 @@ window.onload = () => {
         numa = info.numofach
         numh = info.numofhobb
         nump = info.numofproj
+
         
         for (let i=1; i<=nump; i++) {
             document.getElementById('projwarn').style.display = 'none';
