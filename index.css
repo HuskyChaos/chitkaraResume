@@ -76,4 +76,8 @@ textarea {
 
 #submit {
     text-decoration: none;
+    text-align: center;
+    border: solid 2px black;
+    padding: 1%;
+    margin-bottom: 10px;
 }
