@@ -49,6 +49,7 @@ legend {
     width: 10vw;
     border: solid 1px black;
     border-radius: 1vw;
+    background: rgb(25, 34, 51);
 }
 
 input {
