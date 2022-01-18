@@ -2,9 +2,7 @@ window.onload = () => {
 
     alert('Upload Picture For Resume');
 
-    
     var info = JSON.parse(window.localStorage.getItem('info'));
-    
 
     document.getElementById('name').innerHTML = info.name;
     document.getElementById('addLine1').innerHTML = info.addLine1;
@@ -20,7 +18,6 @@ window.onload = () => {
         document.getElementById('pic').src = URL.createObjectURL(event.target.files[0]);
         document.getElementById('getpic').style = 'display: none;';
     }
-
 
     if ( info.linkedIn.length === 0 ) {} else if ( info.linkedIn === null) {} else if ( info.linkedIn === undefined) {}
     else {document.getElementById('linkedIn').innerHTML = 'LinkedIn: linkedin.com/in/' + info.linkedIn;}

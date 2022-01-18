@@ -7,7 +7,6 @@ window.onload = () => {
     let rach = document.getElementById('rach');
     let rhobb = document.getElementById('rhobb');
 
-
     let nump = null;
     let numc = null;
     let numa = null;
@@ -21,7 +20,6 @@ window.onload = () => {
         numa = info.numofach
         numh = info.numofhobb
         nump = info.numofproj
-
         
         for (let i=1; i<=nump; i++) {
             document.getElementById('projwarn').style.display = 'none';
