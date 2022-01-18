@@ -66,27 +66,42 @@ window.onload = () => {
     document.getElementById('tools').innerHTML = info.tools;
 
     let numc = info.numofcert;
-    for (let i=1; i<=numc; i++) {
-        let li = document.createElement('li');
-        li.id = 'cert' + i;
-        document.getElementById('certs').appendChild(li);
-        eval("document.getElementById('cert" + i + "').innerHTML = info.cert" + i + ";");
+    if (numc != 0) {
+        for (let i=1; i<=numc; i++) {
+            let li = document.createElement('li');
+            li.id = 'cert' + i;
+            document.getElementById('certs').appendChild(li);
+            eval("document.getElementById('cert" + i + "').innerHTML = info.cert" + i + ";");
+        }
+    }
+    else {
+        document.getElementById('certdiv').remove();
     }
 
     let numa = info.numofach;
-    for (let i=1; i<=numa; i++) {
-        let li = document.createElement('li');
-        li.id = 'ach' + i;
-        document.getElementById('achs').appendChild(li);
-        eval("document.getElementById('ach" + i + "').innerHTML = info.ach" + i + ";");
+    if (numa != 0) {
+        for (let i=1; i<=numa; i++) {
+            let li = document.createElement('li');
+            li.id = 'ach' + i;
+            document.getElementById('achs').appendChild(li);
+            eval("document.getElementById('ach" + i + "').innerHTML = info.ach" + i + ";");
+        }
+    }
+    else {
+        document.getElementById('achdiv').remove();
     }
 
     let numh = info.numofhobb;
-    for (let i=1; i<=numh; i++) {
-        let li = document.createElement('li');
-        li.id = 'hob' + i;
-        document.getElementById('hobbs').appendChild(li);
-        eval("document.getElementById('hob" + i + "').innerHTML = info.hob" + i + ";");
+    if (numh != 0 ) {
+        for (let i=1; i<=numh; i++) {
+            let li = document.createElement('li');
+            li.id = 'hob' + i;
+            document.getElementById('hobbs').appendChild(li);
+            eval("document.getElementById('hob" + i + "').innerHTML = info.hob" + i + ";");
+        }
+    }
+    else {
+        document.getElementById('hobbdiv').remove();
     }
 
 }

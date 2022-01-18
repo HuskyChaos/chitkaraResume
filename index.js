@@ -97,7 +97,7 @@ window.onload = () => {
 
     document.getElementById('projnum').onchange = (e) => {
         nump = parseInt(e.target.value);
-        if ( nump > 1 && nump < 5 ) {
+        if ( nump >= 1 && nump <= 5 ) {
             rproj.style.display = 'inline';
             document.getElementById('projwarn').style.display = 'none';
             e.target.style.display = 'none';
@@ -129,7 +129,7 @@ window.onload = () => {
 
     document.getElementById('certs').onchange = (e) => {
         numc = parseInt(e.target.value);
-        if (numc > 0 && numc < 5) {
+        if (numc >= 0 && numc <= 5) {
             rcert.style.display = 'inline';
             document.getElementById('certwarn').style.display = 'none';
             e.target.style.display = 'none';
@@ -147,7 +147,7 @@ window.onload = () => {
 
     document.getElementById('ach').onchange = (e) => {
         numa = parseInt(e.target.value);
-        if (numa > 0 && numa < 5) {
+        if (numa >= 0 && numa <= 5) {
             rach.style.display = 'inline';
             document.getElementById('achwarn').style.display = 'none';
             e.target.style.display = 'none';
@@ -165,7 +165,7 @@ window.onload = () => {
 
     document.getElementById('hobb').onchange = (e) => {
         numh = parseInt(e.target.value);
-        if (numh > 0 && numh < 4) {
+        if (numh >= 0 && numh <= 4) {
             rhobb.style.display = 'inline';
             document.getElementById('hobbwarn').style.display = 'none';
             e.target.style.display = 'none';
@@ -245,6 +245,11 @@ window.onload = () => {
                 p4team: null,
                 p4info: null
             },
+            p5: {
+                p5name: null,
+                p5team: null,
+                p5info: null
+            },
             progLang: null, lang: null, frameworks: null, dbs: null, tools: null,
             cert1: null, cert2: null, cert3: null, cert4: null, ach1: null, ach2: null, ach3: null,
             ach4: null, hob1: null, hob2: null, hob3: null, numofproj: null, numofcert: null,
@@ -300,21 +305,6 @@ window.onload = () => {
             eval('info.q' + i + ' = document.getElementById("q' + i + '").value;')
         }
 
-        // info.q11 = document.getElementById('q11').value;
-        // info.q12 = document.getElementById('q12').value;
-        // info.q13 = document.getElementById('q13').value;
-        // info.q14 = document.getElementById('q14').value;
-        // info.q15 = document.getElementById('q15').value;
-        // info.q21 = document.getElementById('q21').value;
-        // info.q22 = document.getElementById('q22').value;
-        // info.q23 = document.getElementById('q23').value;
-        // info.q24 = document.getElementById('q24').value;
-        // info.q25 = document.getElementById('q25').value;
-        // info.q31 = document.getElementById('q31').value;
-        // info.q32 = document.getElementById('q32').value;
-        // info.q33 = document.getElementById('q33').value;
-        // info.q34 = document.getElementById('q34').value;
-        // info.q35 = document.getElementById('q35').value;
         info.state = document.getElementById('state').value;
         info.tools = document.getElementById('tools').value;
         
