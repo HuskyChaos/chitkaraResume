@@ -5,7 +5,6 @@ window.onload = () => {
     
     var info = JSON.parse(window.localStorage.getItem('info'));
     
-    console.log(info);
 
     document.getElementById('name').innerHTML = info.name;
     document.getElementById('addLine1').innerHTML = info.addLine1;
@@ -24,40 +23,20 @@ window.onload = () => {
 
 
     if ( info.linkedIn.length === 0 ) {} else if ( info.linkedIn === null) {} else if ( info.linkedIn === undefined) {}
-    else {
-        document.getElementById('linkedIn').innerHTML = 'LinkedIn: linkedin.com/in/' + info.linkedIn;
-    }
+    else {document.getElementById('linkedIn').innerHTML = 'LinkedIn: linkedin.com/in/' + info.linkedIn;}
 
     if ( info.gitHub.length === 0 ) {} else if ( info.gitHub === null) {} else if ( info.gitHub === undefined) {}
-    else {
-        document.getElementById('gitHub').innerHTML = 'GitHub: github.com/' + info.gitHub;
+    else {document.getElementById('gitHub').innerHTML = 'GitHub: github.com/' + info.gitHub;}
+
+    for (let i=1; i<=15; i++) {
+        if (i == 5 || i == 10 || i ==15) {
+            if (eval("parseInt(info.q" + i + ")") <= 10) {
+                eval("document.getElementById('q" + i + "').innerHTML = info.q" + i + " + ' CGPA';");
+            }
+            else {eval("document.getElementById('q" + i + "').innerHTML = info.q" + i + " + ' %';");}
+        }
+        else {eval("document.getElementById('q" + i + "').innerHTML = info.q" + i);}
     }
-
-    document.getElementById('q11').innerHTML = info.q11;
-    document.getElementById('q12').innerHTML = info.q12;
-    document.getElementById('q13').innerHTML = info.q13;
-    document.getElementById('q14').innerHTML = info.q14;
-
-    if ( parseInt(info.q15) <= 10) {document.getElementById('q15').innerHTML = info.q15 + ' CGPA';}
-    else {
-        document.getElementById('q15').innerHTML = info.q15 + '%';
-    }
-
-    document.getElementById('q21').innerHTML = info.q21;
-    document.getElementById('q22').innerHTML = info.q22;
-    document.getElementById('q23').innerHTML = info.q23;
-    document.getElementById('q24').innerHTML = info.q24;
-
-    if ( parseInt(info.q25) <= 10 ) {document.getElementById('q25').innerHTML = info.q25 + ' CGPA';}
-    else {document.getElementById('q25').innerHTML = info.q25 + '%';}
-
-    document.getElementById('q31').innerHTML = info.q31;
-    document.getElementById('q32').innerHTML = info.q32;
-    document.getElementById('q33').innerHTML = info.q33;
-    document.getElementById('q34').innerHTML = info.q34;
-
-    if ( parseInt(info.q35) <= 10 ) {document.getElementById('q35').innerHTML = info.q35 + ' CGPA';}
-    else {document.getElementById('q35').innerHTML = info.q35 + '%';}
 
     let num = info.numofproj;
     for (let i=1; i<=num; i++) {

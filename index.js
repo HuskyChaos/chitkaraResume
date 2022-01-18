@@ -222,9 +222,9 @@ window.onload = () => {
         info = { name: null, addLine1: null, addLine2: null, city: null,
             state: null, pinCode: null, contact: null, email: null,
             linkedIn: null, gitHub: null,
+            q1: null, q2: null, q3: null, q4: null, q5: null,
+            q6: null, q7: null, q8: null, q9: null, q10: null,
             q11: null, q12: null, q13: null, q14: null, q15: null,
-            q21: null, q22: null, q23: null, q24: null, q25: null,
-            q31: null, q32: null, q33: null, q34: null, q35: null,
             p1: {
                 p1name: null,
                 p1team: null,
@@ -296,21 +296,25 @@ window.onload = () => {
 
         info.progLang = document.getElementById('progLang').value;
 
-        info.q11 = document.getElementById('q11').value;
-        info.q12 = document.getElementById('q12').value;
-        info.q13 = document.getElementById('q13').value;
-        info.q14 = document.getElementById('q14').value;
-        info.q15 = document.getElementById('q15').value;
-        info.q21 = document.getElementById('q21').value;
-        info.q22 = document.getElementById('q22').value;
-        info.q23 = document.getElementById('q23').value;
-        info.q24 = document.getElementById('q24').value;
-        info.q25 = document.getElementById('q25').value;
-        info.q31 = document.getElementById('q31').value;
-        info.q32 = document.getElementById('q32').value;
-        info.q33 = document.getElementById('q33').value;
-        info.q34 = document.getElementById('q34').value;
-        info.q35 = document.getElementById('q35').value;
+        for (let i=1; i<=15; i++) {
+            eval('info.q' + i + ' = document.getElementById("q' + i + '").value;')
+        }
+
+        // info.q11 = document.getElementById('q11').value;
+        // info.q12 = document.getElementById('q12').value;
+        // info.q13 = document.getElementById('q13').value;
+        // info.q14 = document.getElementById('q14').value;
+        // info.q15 = document.getElementById('q15').value;
+        // info.q21 = document.getElementById('q21').value;
+        // info.q22 = document.getElementById('q22').value;
+        // info.q23 = document.getElementById('q23').value;
+        // info.q24 = document.getElementById('q24').value;
+        // info.q25 = document.getElementById('q25').value;
+        // info.q31 = document.getElementById('q31').value;
+        // info.q32 = document.getElementById('q32').value;
+        // info.q33 = document.getElementById('q33').value;
+        // info.q34 = document.getElementById('q34').value;
+        // info.q35 = document.getElementById('q35').value;
         info.state = document.getElementById('state').value;
         info.tools = document.getElementById('tools').value;
         
