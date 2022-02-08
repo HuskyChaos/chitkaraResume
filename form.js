@@ -1,6 +1,33 @@
 window.onload = () => {
 
-    alert('Upload Picture For Resume');
+    document.getElementById('addPic2').onclick = () => {
+        document.getElementById('addPic1').remove();
+        document.getElementById('addPic2').remove();
+    }
+
+    document.getElementById('addPic1').onclick = () => {
+        document.getElementById('addPic1').remove();
+        document.getElementById('addPic2').remove();
+
+        let inp = document.createElement('input');
+        inp.type = 'file'
+        inp.accept = 'image/*'
+        inp.id = 'getpic'
+
+        let img = document.createElement('img');
+        img.id = 'pic'
+        img.alt = 'Student Picture'
+
+        document.getElementsByClassName('right')[0].appendChild(inp);
+        document.getElementsByClassName('right')[0].appendChild(img);
+
+        document.getElementById('getpic').onchange = (event) => {
+            document.getElementById('pic').style = 'display: inline;';
+            document.getElementById('pic').src = URL.createObjectURL(event.target.files[0]);
+            document.getElementById('getpic').style = 'display: none;';
+        }
+        
+    }
 
     var info = JSON.parse(window.localStorage.getItem('info'));
 
@@ -13,11 +40,6 @@ window.onload = () => {
     document.getElementById('contact').innerHTML = info.contact;
     document.getElementById('email').innerHTML = info.email;
 
-    document.getElementById('getpic').onchange = (event) => {
-        document.getElementById('pic').style = 'display: inline;';
-        document.getElementById('pic').src = URL.createObjectURL(event.target.files[0]);
-        document.getElementById('getpic').style = 'display: none;';
-    }
 
     if ( info.linkedIn.length === 0 ) {} else if ( info.linkedIn === null) {} else if ( info.linkedIn === undefined) {}
     else {document.getElementById('linkedIn').innerHTML = 'LinkedIn: linkedin.com/in/' + info.linkedIn;}
@@ -30,7 +52,7 @@ window.onload = () => {
             if (eval("parseInt(info.q" + i + ")") <= 10) {
                 eval("document.getElementById('q" + i + "').innerHTML = info.q" + i + " + ' CGPA';");
             }
-            else {eval("document.getElementById('q" + i + "').innerHTML = info.q" + i + " + ' %';");}
+            else if (eval("parseInt(info.q" + i + ")") > 10) {eval("document.getElementById('q" + i + "').innerHTML = info.q" + i + " + ' %';");}
         }
         else {eval("document.getElementById('q" + i + "').innerHTML = info.q" + i);}
     }
